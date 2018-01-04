@@ -34,4 +34,13 @@ const foundedStyle = founded => {
   );
 };
 
+Card.propTypes = {
+  name: PropTypes.string,
+  founded: PropTypes.string,
+  coat: PropTypes.string,
+  words: PropTypes.string,
+  seats: PropTypes.array,
+  titles: PropTypes.array
+};
+
 export default Card;
