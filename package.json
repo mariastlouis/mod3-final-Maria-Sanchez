@@ -27,8 +27,9 @@
    
   },
   "scripts": {
-    "start": "npm-run-all -p watch-css start-js",
+    "start": "npm run build-css && react-scripts start",
     "build": "react-scripts build",
+    "build-css": "node-sass-chokidar src/ -o src/",
     "test": "react-scripts test --env=jsdom",
     "lint": "./node_modules/.bin/eslint ./",
     "eject": "react-scripts eject"
