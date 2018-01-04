@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import '../../components/App/App.css'
 
 
 const Card = ({name, founded, coat, words, seats, titles, weapons}) => {
  
 const titleMap = (titles) => {
   let mapTitle = titles.map((title => {
-    
     return (
       <p> Title: {title} </p>
       )

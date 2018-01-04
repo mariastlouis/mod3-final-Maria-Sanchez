@@ -17,10 +17,6 @@ constructor () {
     this.props.storeHouses(getHouseData);
   }
 
-   // <button onClick={() => {
-          //   this.props.fakeAction();
-          //   alert(this.props.fake);
-          // }}> FAKE ACTION</button>
 
   render() {
     return (
@@ -36,7 +32,6 @@ constructor () {
           this.props.houses.data.length > 0 &&
           <CardContainer />
         }
-
         
         </div>
       </div>
@@ -65,7 +60,5 @@ export const mapDispatchToProps = dispatch => {
   }
 }
 
-// const mapDispatchToProps = dispatch => ({ fakeAction:
-//   () => dispatch(fakeAction())
-// });
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);
