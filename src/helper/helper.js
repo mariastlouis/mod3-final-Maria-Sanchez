@@ -5,12 +5,12 @@
   return cleanData(houseData)
 }
 
-// name, founded, seats, titles, coatOfArms, ancestralWeapons, words
+
 
 const cleanData = (houseData) => {
   try {
     const unresolvedPromises = Object.keys(houseData).map(async(house) => {
-    // const seatPromises = await getSeats(houseData[house].seats);
+    
      
       return {
         name: houseData[house].name,
