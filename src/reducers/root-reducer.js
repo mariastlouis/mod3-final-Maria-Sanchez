@@ -3,7 +3,6 @@ import { fake } from './fake-reducer';
 import {houseReducer} from './api-reducer';
 
 const rootReducer = combineReducers({
-  fake,
   houses: houseReducer
 });
 

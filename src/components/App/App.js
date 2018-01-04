@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { fakeAction, makeHouseData } from '../../actions';
 import {getData} from '../../helper/helper';
 import CardContainer from '../../container/CardContainer/CardContainer'
+import loading from '../../assets/wolf.gif';
 
 class App extends Component {
 constructor () {
@@ -17,10 +18,6 @@ constructor () {
     this.props.storeHouses(getHouseData);
   }
 
-   // <button onClick={() => {
-          //   this.props.fakeAction();
-          //   alert(this.props.fake);
-          // }}> FAKE ACTION</button>
 
   render() {
     return (
@@ -33,10 +30,10 @@ constructor () {
         <div className='Display-info'>
         
         {
-          this.props.houses.data.length > 0 &&
-          <CardContainer />
+          this.props.houses.data.length > 0 ? 
+          <CardContainer /> :
+          <img src = {loading} />
         }
-
         
         </div>
       </div>
@@ -65,7 +62,5 @@ export const mapDispatchToProps = dispatch => {
   }
 }
 
-// const mapDispatchToProps = dispatch => ({ fakeAction:
-//   () => dispatch(fakeAction())
-// });
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);

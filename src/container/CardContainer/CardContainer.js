@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card';
 import { connect } from 'react-redux';
-
+import '../../components/App/App.css'
 
 
 
@@ -36,9 +36,12 @@ export const CardContainer = (props) => {
 
   return (
     <div className = "card-container">
-      <p> Card container hooked up </p>
-      {cardMap(props)}
-
+     
+      {
+        props.houses.data.length > 0 &&
+        cardMap(props)
+      }
+      
     </div>
   );
 };
