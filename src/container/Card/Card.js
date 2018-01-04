@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../components/App/App.css'
+import '../../components/App/App.css';
 
 
 const Card = ({name, founded, coat, words, seats, titles, weapons}) => {
@@ -8,27 +8,30 @@ const Card = ({name, founded, coat, words, seats, titles, weapons}) => {
 const titleMap = (titles) => {
   let mapTitle = titles.map((title => {
     return (
-      <p> Title: {title} </p>
+      <p> Titles: {title} </p>
       )
   }))
   return mapTitle
-}
+};
 
+const foundedStyle = founded => {
+  return founded ? founded : 'N/A'
+};
 
 
   return (
 
     <div className = "card">
-    <p> Name: {name} </p>
-    <p> Founded: {founded} </p>
-    <p> Coat: {coat} </p>
-    <p> Words: {words} </p>
-    <p> Seats: {seats} </p>
-    <p> {titleMap(titles)} </p>
-    <p> Weapons: {weapons} </p>
-    <p> Words: {words} </p>
+      <h1>{name} </h1>
+      <h2>{words}</h2>
+      <p> Founded: {foundedStyle(founded)} </p>
+      <p> Seats: {seats} </p>
+      <p> {titleMap(titles)} </p>
+      <p> Ancestral Weapons: {weapons} </p>
+      <p> Coat: {coat} </p>
+    
     </div>
-  )
-}
+  );
+};
 
 export default Card;

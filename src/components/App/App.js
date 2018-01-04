@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { fakeAction, makeHouseData } from '../../actions';
 import {getData} from '../../helper/helper';
 import CardContainer from '../../container/CardContainer/CardContainer'
+import loading from '../../assets/wolf.gif';
 
 class App extends Component {
 constructor () {
@@ -29,8 +30,9 @@ constructor () {
         <div className='Display-info'>
         
         {
-          this.props.houses.data.length > 0 &&
-          <CardContainer />
+          this.props.houses.data.length > 0 ? 
+          <CardContainer /> :
+          <img src = {loading} />
         }
         
         </div>
