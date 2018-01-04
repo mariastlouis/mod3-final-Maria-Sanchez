@@ -6,11 +6,13 @@ import PropTypes from 'prop-types';
 const Card = ({name, founded, coat, words, seats, titles, weapons}) => {
  
 const titleMap = (titles) => {
-  const titleKeys = Object.keys(titles).map((title) => {
-    debugger;
+  let mapTitle = titles.map((title => {
     
-  })
-
+    return (
+      <p> Title: {title} </p>
+      )
+  }))
+  return mapTitle
 }
 
 
@@ -18,14 +20,14 @@ const titleMap = (titles) => {
   return (
 
     <div className = "card">
-    <p> name: {name} </p>
-    <p> founded: {founded} </p>
-    <p> coate: {coat} </p>
-    <p> words: {words} </p>
-    <p> seats: {seats} </p>
-    <p> titles: {titles} </p>
-    <p> weapons: {weapons} </p>
-    <p> words: {words} </p>
+    <p> Name: {name} </p>
+    <p> Founded: {founded} </p>
+    <p> Coat: {coat} </p>
+    <p> Words: {words} </p>
+    <p> Seats: {seats} </p>
+    <p> {titleMap(titles)} </p>
+    <p> Weapons: {weapons} </p>
+    <p> Words: {words} </p>
     </div>
   )
 }

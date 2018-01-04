@@ -37,7 +37,14 @@ export const CardContainer = (props) => {
   return (
     <div className = "card-container">
       <p> Card container hooked up </p>
-      {cardMap(props)}
+      
+      {
+        props.houses.data.length > 0 &&
+        cardMap(props)
+
+      }
+
+      
 
     </div>
   );
