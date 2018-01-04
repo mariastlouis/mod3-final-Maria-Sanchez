@@ -21,7 +21,9 @@ export const CardContainer = (props) => {
             coat = {houseData[house].coat}
             words = {houseData[house].words}
             seats = {houseData[house].seats}
-             
+            titles= {houseData[house].titles}
+            weapons = {houseData[house].weapons}
+            words = {houseData[house].words} 
 
             />
         )
