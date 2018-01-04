@@ -10,7 +10,8 @@
 const cleanData = (houseData) => {
   try {
     const unresolvedPromises = Object.keys(houseData).map(async(house) => {
-    
+
+    // const memberPromises = await getSwornMember(houseData(houseData[house].swornMembers))
      
       return {
         name: houseData[house].name,
@@ -32,6 +33,30 @@ const cleanData = (houseData) => {
 
 }
 
+
+// const getSwornMember = async(member) => {
+//   const fetchSwornMember = await fetch('http://localhost:3001/api/v1/character', {
+//     method: 'POST',
+//     body: JSON.stringify(member),
+//     headers: {
+//       'Content-Type': 'application/json'
+//     }
+
+//   })
+// }
+
+const getSwornMember = (memberData) => {
+  const memberPromises = memberData.map(async(member) => {
+    const fetchSwornMember = await fetch('http://localhost:3001/api/v1/character', {
+    method: 'POST',
+    body: JSON.stringify(member),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+
+  })
+  })
+}
 
 
 

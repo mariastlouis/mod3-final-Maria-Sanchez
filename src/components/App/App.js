@@ -3,7 +3,7 @@ import PropTypes, { shape, func, string } from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
-import { fakeAction, makeHouseData } from '../../actions';
+import { makeHouseData } from '../../actions';
 import {getData} from '../../helper/helper';
 import CardContainer from '../../container/CardContainer/CardContainer'
 import loading from '../../assets/wolf.gif';
@@ -16,6 +16,7 @@ constructor () {
   componentDidMount = async () => {
     const getHouseData = await getData();
     this.props.storeHouses(getHouseData);
+    console.log(this.props.houses)
   }
 
 
@@ -40,11 +41,6 @@ constructor () {
     );
   }
 }
-
-App.propTypes = {
-  fake: shape({ fake: string }),
-  fakeAction: func.isRequired
-};
 
 
 

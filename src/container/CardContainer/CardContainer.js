@@ -12,10 +12,11 @@ export const CardContainer = (props) => {
     if (props.houses.data) {
       const houseData = props.houses.data;
 
-      const houseKeys = Object.keys(houseData).map((house) => {
+      const houseKeys = Object.keys(houseData).map((house, index) => {
        
         return (
           <Card 
+            key = {index}
             name = {houseData[house].name}
             founded = {houseData[house].founded}
             coat = {houseData[house].coat}
@@ -50,6 +51,10 @@ export const mapStateToProps = store => {
   return {
     houses: store.houses
   }
+}
+
+CardContainer.propTypes = {
+  props: PropTypes.array
 }
 
 export default connect(mapStateToProps, null)(CardContainer);
