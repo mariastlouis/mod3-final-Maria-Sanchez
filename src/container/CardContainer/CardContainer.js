@@ -4,12 +4,38 @@ import Card from '../Card/Card';
 import { connect } from 'react-redux';
 
 
+
+
 export const CardContainer = (props) => {
-  console.log(props)
+  
+  const cardMap = (props) => {
+    if (props.houses.data) {
+      const houseData = props.houses.data;
+
+      const houseKeys = Object.keys(houseData).map((house) => {
+       
+        return (
+          <Card 
+            name = {houseData[house].name}
+            founded = {houseData[house].founded}
+            coat = {houseData[house].coat}
+            words = {houseData[house].words}
+            seats = {houseData[house].seats}
+             
+
+            />
+        )
+      })
+    
+    return houseKeys
+    }
+  }
+
+
   return (
     <div className = "card-container">
       <p> Card container hooked up </p>
-      <Card /> 
+      {cardMap(props)}
 
     </div>
   );

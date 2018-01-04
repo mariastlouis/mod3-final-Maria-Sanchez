@@ -3,9 +3,16 @@ import PropTypes from 'prop-types';
 
 
 
-const Card = (props) => {
+const Card = ({name, founded, coat, words, seats}) => {
+  console.log(name)
   return (
-    <p> card hooked up </p>
+    <div className = "card">
+    <p> {name} </p>
+    <p> {founded} </p>
+    <p> {coat} </p>
+    <p> {words} </p>
+    <p> {seats} </p>
+    </div>
   )
 }
 

@@ -15,7 +15,6 @@ constructor () {
   componentDidMount = async () => {
     const getHouseData = await getData();
     this.props.storeHouses(getHouseData);
-    
   }
 
    // <button onClick={() => {
@@ -32,7 +31,13 @@ constructor () {
          
         </div>
         <div className='Display-info'>
-        <CardContainer />
+        
+        {
+          this.props.houses.data.length > 0 &&
+          <CardContainer />
+        }
+
+        
         </div>
       </div>
     );
